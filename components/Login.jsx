@@ -1,8 +1,6 @@
 
 import Link from 'next/link'
-import { useContext } from 'react'
 import { ThreeDots } from 'react-loader-spinner'
-import { AuthContext } from './AuthProvider'
 
 
 
@@ -14,8 +12,10 @@ const Login = ({onSubmitHandler, onChangeHandler, name, email, pass, inValid, er
     
 
   return (
-   
-    <form className="max-w-sm mx-auto mt-20 bg-slate-100 p-10 rounded-md" onSubmit={onSubmitHandler}>
+   <>
+    <h2 className="max-w-sm mx-auto mt-20 font-bold text-3xl text-center text-slate-600  ">LOGIN PAGE</h2>
+    <form className="max-w-sm mx-auto mt-10 bg-slate-100 p-10 rounded-md" onSubmit={onSubmitHandler}>
+    
   <div className="mb-5">
     <label  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your email</label>
     <input onChange={onChangeHandler} value={email} type="email" name="email" className={classList.join(' ')} placeholder="name@mail.com" required />
@@ -51,6 +51,8 @@ const Login = ({onSubmitHandler, onChangeHandler, name, email, pass, inValid, er
   wrapperClass=""/> : 'Login'}  </button> <p className='mt-2'> <Link href={'/req-reset-password'}>Forgotten Password?</Link></p>
   {error && <h3  className="text-red-500 p-3 align-middle text-center">{error.response ? error.response.data.message : error.message}</h3>}
 </form>
+   </>
+    
 
   )
 }

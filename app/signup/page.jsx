@@ -6,11 +6,16 @@ import React from 'react';
 import { useState } from 'react';
 import axios from '../../utilities/axiosInstance';
 import { replaceItems } from '@/utilities/replaceItems';
+import { Alert } from 'antd';
+import { useRouter } from 'next/navigation';
 
 const page = (props) => {
+    const router = useRouter()
+
     const [email, setEmail] = useState('');
     const [pass, setPass] = useState('');
     const [name, setName] = useState('');
+    const [alert, setAlert] = useState('');
 
     const [classList, setclassList] = useState([ 'bg-blue-50', 'border outline-1', 'outline-blue-400', 'border-gray-300', 'text-gray-900', 'text-sm', 'rounded-lg', 'block', 'w-full', 'p-2.5']);
     const [classList2, setclassList2] = useState([ 'bg-blue-50', 'border outline-1', 'outline-blue-400', 'border-gray-300', 'text-gray-900', 'text-sm', 'rounded-lg', 'block', 'w-full', 'p-2.5']);
@@ -83,17 +88,29 @@ const page = (props) => {
                 password: pass,
                 name: name,
             });
+
+            setAlert('You have been succesfully signed up. Kindly visit your email to verify your email.')
             setIsLoading(false);
-            console.log(res);
+            setEmail('');
+            setPass('');
+            setName('');
+
+            setTimeout(() => {
+                router.push('/login');
+            }, 4000);
+            
         } catch (error) {
             setIsLoading(false);
-            console.log(error);
+            
             setError(error);
         }
     };
 
     return (
+        <>
+         {alert && <Alert message={alert} closeIcon />}
         <Signup onSubmitHandler={onSubmitHandler} onChangeHandler={onChangeHandler} name={name} email={email} pass={pass} inValid={inValid} error={error} classList={classList} classList2={classList2} classList3={classList3} isLoading={isLoading}/>
+        </>
     );
 };
 

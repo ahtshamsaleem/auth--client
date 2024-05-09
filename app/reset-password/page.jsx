@@ -128,13 +128,16 @@ const page = () => {
 
 
 
-                        router.push('/login');
+                        setTimeout(() => {
+                            router.push('/login');
+                        }, 5000);
                         
                     }
                     //localStorage.setItem('token', res?.data?.token);
                     setIsLoading(false);
                     setError('');
                     setPass('');
+                    setcPass('');
                     
                     
                 } catch (error) {

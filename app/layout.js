@@ -1,18 +1,10 @@
-'use client'
-import { useEffect, useState } from "react";
-import "./globals.css";
-import AuthProvider from "@/components/AuthProvider";
-
-
-
+'use client';
+import './globals.css';
 
 export default function RootLayout({ children }) {
-    
-
-  return (
-    <html lang="en">
-       <AuthProvider><body>{children}</body></AuthProvider>
-      
-    </html>
-  );
+    return (
+        <html lang='en'>
+            <body>{children}</body>
+        </html>
+    );
 }
