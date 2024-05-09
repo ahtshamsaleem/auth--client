@@ -9,7 +9,7 @@ import { replaceItems } from '@/utilities/replaceItems';
 import { Alert } from 'antd';
 import { useRouter } from 'next/navigation';
 
-const page = (props) => {
+const Page = (props) => {
     const router = useRouter()
 
     const [email, setEmail] = useState('');
@@ -114,4 +114,4 @@ const page = (props) => {
     );
 };
 
-export default page;
+export default Page;

@@ -8,7 +8,7 @@ import axios from '../../utilities/axiosInstance';
 import { replaceItems } from '@/utilities/replaceItems';
 import { useRouter } from 'next/navigation';
 
-const page = (props) => {
+const Page = (props) => {
     const [email, setEmail] = useState('');
     const [pass, setPass] = useState('');
 
@@ -114,4 +114,4 @@ const page = (props) => {
     );
 };
 
-export default page;
+export default Page;

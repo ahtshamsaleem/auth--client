@@ -7,7 +7,7 @@ import axios from '../../utilities/axiosInstance';
 import { useRouter, useSearchParams } from 'next/navigation';
 import React, { useEffect, useState } from 'react'
 
-const page = () => {
+const Page = () => {
 
     const [pass, setPass] = useState('');
     const [cPass, setcPass] = useState('');
@@ -187,4 +187,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page

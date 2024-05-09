@@ -6,7 +6,7 @@ import axios from '../../utilities/axiosInstance';
 import React, { useState } from 'react'
 import ReqResetPassword from '../../components/ReqResetPassword';
 
-const page = () => {
+const Page = () => {
 
     const [email, setEmail] = useState('');
     const [inValid, setInvalid] = useState({
@@ -97,4 +97,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page
